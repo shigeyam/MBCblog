@@ -1,1 +1,1 @@
-web: gunicorn MBCblog.wsgi
+web: gunicorn MBCblog.wsgi --log-file -
