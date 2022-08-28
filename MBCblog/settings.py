@@ -19,7 +19,7 @@ LOGOUT_REDIRECT_URL='/login'
 SECRET_KEY = 'django-insecure-#!sn1elu8@-bhid6+lfag_60$6nztpvq1ig%mns1qh=gw^y@or'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
