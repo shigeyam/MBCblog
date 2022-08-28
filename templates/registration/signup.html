@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<br>
+<h2>新規ユーザー登録</h2>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+  <div class="form-control">
+    {% bootstrap_form form layout="utilities" %} 
+  </div>
+  <br>
+      <button type="submit" class="btn btn-secondary">ユーザー登録</button>
+</form>
+
+  {% endblock %}

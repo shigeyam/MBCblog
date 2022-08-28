@@ -1,0 +1,51 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
+    <br>
+    <h4 class="title">{{post.title}}</h4>
+    <small>Posted at {{post.posted_date}}</small>
+    <p>{{post.intro}}</p>
+    <p>{{post.body}}</p>
+    <a href="/blog">ブログに戻る</a>
+    <hr>
+
+    <h4 class="subtitle">コメント</h4>
+
+
+    {% for comment in post.comments.all %}
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>
+                        {{comment.name}}
+                        <small>{{comment.posted_date}}</small>
+                    </strong>
+                    <br>
+                    {{comment.body}}
+                </p>
+            </div>
+        </div>
+    </article>
+    <hr>
+    {% empty %}
+    <div class="notification">
+        <p>コメントはまだありません、</p>
+    </div>
+    <hr>
+    {% endfor %} 
+
+    <br>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <div class="field">
+            <div class="form-control">
+                <h4 class="subtitle">コメントを追加</h4>
+                {% bootstrap_form form layout="utilities" %} 
+                <button class="btn btn-secondary">送信</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+

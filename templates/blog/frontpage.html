@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="post block">
+    <br>
+    <h2 style="text-align: center;">{{ user.get_username }}さん、ようこそ森田塾へ</h2>
+    <h6 style="text-align: center;">Wellcome to Morita's Private Business Classes.</h6>
+    <br>
+    <img src="/media/images/PSX_20170723_080118.jpg" alt="windmill-image" class="img-fluid">
+    <br>
+    <br>
+    <p>私がこれまでに培ってきた、知識や経験に基づく考え方を共有することで、
+        お世話になったみなさんのお役に立てればと思い、このブログを開設しました。
+        みなさんが仕事や日常生活において、ちょっと使える考え方や理論、ツールなどについて、
+        なるべくかみ砕いてトピックスを掲載していこうと思います。</p> 
+    <p>私自身でプログラミングの勉強を兼ねて自作しているため、まだ内容は少なく見た目も良くありませんが、
+        少しずつ記事を追加し、サイトもリニューアルしていきます。  
+        みなさんからのご意見やご感想によって内容を見直し、さまざまなご質問にも答えていきますので、
+        お気軽にコメントをお寄せください。</p>
+
+</div>
+{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="post block">
+        <br>
+        <h2 style="text-align: center;">なんでも気軽に1on1</h2>
+        <h6 style="text-align: center;">Feel free to have one-on-one meetings</h6>
+        <br>
+        <p>
+            ご意見、ご質問、お悩み、愚痴・・・その他なんでも気軽にお寄せください。<br>
+            投稿いただいた内容はプライバシーの観点から非公開とさせていただき、
+            塾長からの回答やアドバイスなどは、ご記入いただいたEmailアドレスへ直接返信します。
+        </p>
+        <br>
+        <form action="." method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <div class="form-control">
+                    <h4 class="subtitle">ご自由にご記入ください</h4>
+                    <br>
+                    {% bootstrap_form form layout="utilities" %} 
+                    <button type="submit">送信</button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+{% endblock %}

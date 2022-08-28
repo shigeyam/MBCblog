@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<br>
+<h2>森田塾ログイン画面</h2>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+  <div class="form-control">
+    {% bootstrap_form form layout="utilities" %} 
+  </div>
+  <br>
+      <button type="submit" class="btn btn-secondary">ログイン</button>
+      <a href="/signup">新規ユーザー登録はこちら</a>
+</form>
+
+  {% endblock %}
+

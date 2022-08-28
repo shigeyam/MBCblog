@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<br>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form layout="utilities" %} 
+        <button type="submit">送信</button>
+    </form>
+
+{% endblock %}

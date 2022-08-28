@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
+ <br>
+ <h2 style="text-align: center;">かなり使えるロジカルシンキング</h2>
+ <h6 style="text-align: center;">Quite usable logical thinking</h6>
+ <br>
+ <p>ロジカルシンキングとか論理的思考方などと言うと、なんだか理屈っぽくて面倒くさいイメージを持つかもしれません。
+    でも、かみ砕いて言えば「筋道たてて考える方法」であり、きちんと理解すればかなり使える考え方です。
+    ひとつひとつは当たり前なことばかりですが、それらを体系立てて整理するとそれぞれの意味や目的が明確になり、
+    仕事のみならず日常生活のあらゆるところで活用できると思います。
+    細かな専門用語や略語などにとらわれず、かみ砕いた本質を要約し、身近な例えを交えてお伝えしようと思います。
+    何かひとつでも参考になる記事があれば幸いです。</p>
+ <hr>
+    
+{% for post in posts %}
+    <div class="post_block">
+        <h4 class="subtitle">{{post.title}}</h4>
+        <small>Posted at {{post.posted_date}}</small>
+        <p>{{post.intro}}</p>
+        <a href="{% url 'post_detail' post.slug %}">続きを読む</a>
+    <hr>
+ </div>
+ {% endfor %}
+
+{% endblock %}
