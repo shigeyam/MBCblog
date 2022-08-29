@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'MBCblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd7ktccfi64tq5j',
+        'HOST': 'ec2-52-201-124-168.compute-1.amazonaws.com',
+        'USER': 'bwlkhgcaplnsnj',
+        'PORT': 5432,
+        'PASSWORD': '6a2550c5f4fc2ad51853b99c3beb26c576369b74c096a5387f068a729ff6c98f',        
     }
 }
 
