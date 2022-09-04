@@ -8,7 +8,7 @@
     <h2 style="text-align: center;">{{ user.get_username }}さん、ようこそ森田塾へ</h2>
     <h6 style="text-align: center;">Wellcome to Morita's Private Business Classes.</h6>
     <br>
-    <img src="/media/images/PSX_20170723_080118.jpg" alt="windmill-image" class="img-fluid">
+    <img src="https://res.cloudinary.com/hajlqajqm/image/upload/v1662251692/media/images/P7220435_t4gy09.jpg" alt="windmill-image" class="img-fluid">
     <br>
     <br>
     <p>私がこれまでに培ってきた、知識や経験に基づく考え方を共有することで、
@@ -19,8 +19,10 @@
         少しずつ記事を追加し、サイトもリニューアルしていきます。  
         みなさんからのご意見やご感想によって内容を見直し、さまざまなご質問にも答えていきますので、
         お気軽にコメントをお寄せください。</p>
-
+    <br>
+    <a href="{% url 'accounts:logout' %}">ログアウト</a>
 </div>
+
 {% endif %}
 {% endblock %}
 
