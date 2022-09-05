@@ -1,7 +1,7 @@
 from django.urls import path
 from blog.views import blog, frontpage, post_detail, mba_class, excel_class, commentpage
 from MBCblog import settings
-from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from .views import ImageUploadView
 
 
@@ -14,6 +14,8 @@ urlpatterns = [
     path("commentpage/", commentpage , name="commentpage"),
     path("image-upload/", ImageUploadView.as_view(), name="image-upload"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
