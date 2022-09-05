@@ -8,7 +8,23 @@
 <form action="" method="POST">
     {% csrf_token %}
   <div class="form-control">
-    {% bootstrap_form form layout="utilities" %} 
+    <div class="mb-3">
+      <label class="form-label" for="id_username">ユーザー名</label>
+      <input type="text" name="username" maxlength="150" autofocus class="form-control" placeholder="ユーザー名" required id="id_username">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="id_email">メールアドレス</label>
+      <input type="email" name="email" maxlength="254" class="form-control" placeholder="メールアドレス" id="id_email">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="id_password1">パスワード</label>
+      <input type="password" name="password1" autocomplete="new-password" class="form-control" placeholder="パスワード" required id="id_password1">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="id_password2">パスワード(確認用)</label>
+      <input type="password" name="password2" autocomplete="new-password" class="form-control" placeholder="パスワード(再入力)" required id="id_password2">
+      <div class="form-text"> * 確認のため、再度パスワードを入力してください。</div>
+    </div> 
   </div>
   <br>
       <button type="submit" class="btn btn-secondary">ユーザー登録</button>
