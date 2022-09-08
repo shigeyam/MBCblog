@@ -36,10 +36,6 @@ def mba_class(request):
 def excel_class(request):
     return render(request, "blog/excel_class.html")
 
-#@login_required
-#def commentpage(request):
-#    return render(request, "blog/commentpage.html")
-
 class ImageUploadView(CreateView):
     template_name = "blog/image-upload.html"
     form_class = ImageUploadForm
