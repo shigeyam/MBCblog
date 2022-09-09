@@ -17,7 +17,7 @@
     <div class="post_block">
         <h4 class="subtitle">{{post.title}}</h4>
         <small>Posted at {{post.posted_date}}</small>
-        <p>{{post.intro}}</p>
+        <p>{{post.intro|linebreaksbr}}</p>
         <a href="{% url 'post_detail' post.slug %}">続きを読む</a>
     <hr>
  </div>
