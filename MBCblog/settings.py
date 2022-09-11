@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django_bootstrap5', 
     'cloudinary',
     'cloudinary_storage',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,5 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+SUMMERNOTE_THEME = 'bs4'
+X_FRAME_OPTOPNS = 'SAMEORIGIN'
