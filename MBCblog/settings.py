@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'MBCblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd7ktccfi64tq5j',
-        'HOST': 'ec2-52-201-124-168.compute-1.amazonaws.com',
-        'USER': 'bwlkhgcaplnsnj',
+        'NAME': 'dci5tt0gnhpq6t',
+        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com',
+        'USER': 'jnvtftporrqfde',
         'PORT': 5432,
-        'PASSWORD': '6a2550c5f4fc2ad51853b99c3beb26c576369b74c096a5387f068a729ff6c98f',        
+        'PASSWORD': '7e1d8ad8ec0fabfe3cc925998f7b30d9ab443368fe9f5492cc427c813756347c',        
     }
 }
 
