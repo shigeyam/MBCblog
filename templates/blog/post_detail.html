@@ -5,7 +5,7 @@
     <h4 class="title">{{post.title}}</h4>
     <small>Posted at {{post.posted_date}}</small>
     <p>{{post.intro|linebreaksbr}}</p>
-    <p>{{post.body|linebreaksbr}}</p>
+    <p>{{post.body|safe}}</p>
     <a href="/blog">ブログに戻る</a>
     <hr>
 
