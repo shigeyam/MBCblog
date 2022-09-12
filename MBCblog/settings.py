@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'MBCblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dci5tt0gnhpq6t',
-        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com',
-        'USER': 'jnvtftporrqfde',
+        'NAME': 'd7gkckc7dcprah',
+        'HOST': 'ec2-52-4-87-74.compute-1.amazonaws.com',
+        'USER': 'buqtevoorwmttk',
         'PORT': 5432,
-        'PASSWORD': '7e1d8ad8ec0fabfe3cc925998f7b30d9ab443368fe9f5492cc427c813756347c',        
+        'PASSWORD': 'f9c35ffd67f9d935d12280e1a851a9ece09e251213adc0f08d7a6eaa859783f6',        
     }
 }
 
@@ -144,9 +144,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Cloudinary Storage(image)
 
 CLOUDINARY_STORAGE = {
-'CLOUD_NAME': 'dcfvngfbr',
-'API_KEY': '826917333614973',
-'API_SECRET': 'BlsSQ-9ADw3g79Mdh-kxuOyEDfM'
+'CLOUD_NAME': 'hn1p0jbrv',
+'API_KEY': '771566215283859',
+'API_SECRET': '1j6g1d76-kVpLSNJS06_hb_SkpU'
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
