@@ -5,8 +5,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATE_DIR = BASE_DIR / "templates"
-STATIC_DIR = BASE_DIR / "static"
-MEDIA_DIR = BASE_DIR / "media"
 
 LOGIN_URL = '/login' 
 LOGIN_REDIRECT_URL = '/frontpage'
@@ -129,10 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR,]
+STATIC_DIR = BASE_DIR / "static"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/staticfiles/'
 
+MEDIA_DIR = BASE_DIR / "media"
 MEDIA_ROOT = os.path.join(MEDIA_DIR, 'media')
 MEDIA_URL = '/media/'
 
