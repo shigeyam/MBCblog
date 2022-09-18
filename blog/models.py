@@ -1,11 +1,36 @@
 from django.db import models
 
+class Category(models.Model):
+    category = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.category
+
+
+class PostQuerySet(models.QuerySet):
+
+    def logical_thinking(self):
+        return self.filter(category=1)
+
+    def mba_class(self):
+        return self.filter(category=2)
+
+    def excel_class(self):
+        return self.filter(category=3)
+
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
     slug = models.SlugField()
     intro = models.TextField()
     body = models.TextField()
     posted_date = models.DateTimeField(auto_now_add=True)
+
+    objects = PostQuerySet.as_manager()
+
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):

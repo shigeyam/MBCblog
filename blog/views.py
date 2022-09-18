@@ -10,7 +10,7 @@ def frontpage(request):
 
 @login_required
 def blog(request):
-    posts = Post.objects.all()
+    posts = Post.objects.logical_thinking()
     return render(request, "blog/blog.html", {"posts": posts})
 
 @login_required
@@ -30,11 +30,13 @@ def post_detail(request, slug):
 
 @login_required
 def mba_class(request):
-    return render(request, "blog/mba_class.html")
+    posts = Post.objects.mba_class()
+    return render(request, "blog/mba_class.html", {"posts": posts})
 
 @login_required
 def excel_class(request):
-    return render(request, "blog/excel_class.html")
+    posts = Post.objects.excel_class()
+    return render(request, "blog/excel_class.html", {"posts": posts})
 
 class ImageUploadView(CreateView):
     template_name = "blog/image-upload.html"

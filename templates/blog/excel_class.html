@@ -2,78 +2,30 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-<br>
-<h2 style="text-align: center;">ちょっとしたExcel勉強会</h2>
-<h6 style="text-align: center;">Simple Excel Study Session</h6>
-<br>
-
-<p>理論を応用するために、さまざまなデータを収集し、分析し、活用する場面が多々あります。
-そのための身近なツールとしてPCは欠かせません。中でも身近なアプリケーションがExcelではないでしょうか。</p>
-<p>でも、手作業で操作していては生産性は上がらないし品質も向上しません。そこで重要なキーワードが自動化です。
-大量の繰り返し処理、複雑な集計や演算などは機械に任せて自動化したいですよね？</p>
-<p>ここでは他のアプリケーションとの連携なども含め、自分で出来るちょっとした自動化を目的に、
-Excelの関数や便利な機能などのトピックスを紹介していきます。</p>
-<hr>
-
-<div class="post block">
-
-
-    <br>
-<p>
-<h4>新しい文字列操作関数</h4>
-（TEXTSPLIT関数, TEXTBEFORE関数, TEXTAFTER関数について）<br>
-<br>
-1. TEXTSPLIT関数は、指定した区切り文字でテキストを分割します。<br>
-引数は TEXTSPLIT(元の文字列,列の区切り,行の区切り,空欄を無視する,代替文字) です。<br>
-<br>
-2. TEXTBEFORE関数は、区切り文字でテキストを分割し、その前を返します。<br>
-引数は TEXTBEFORE(元の文字列,区切り文字,区切り位置,検索方法,文字列の終端,見つからないとき) です。<br>
-<br>
-3. TEXTAFTER関数は、区切り文字でテキストを分割し、その後を返します。<br>
-引数は TEXTAFTER(元の文字列,区切り文字,区切り位置,検索方法,文字列の終端,見つからないとき) です。<br>
-<br><br>
-たとえば着信メールに以下のような宛先が入っていたとします。<br>
-<br>
-佐藤太郎&lt;t.satou@gmail.com&gt;; 鈴木花子&lt;h.suzuki@abc.co.jp&gt;; 高橋次郎&lt;j.takahashi@docomo.ne.jp&gt;; 田中美子&lt;y.tanaka@yahoo.co.jp&gt;; 伊藤三郎&lt;s.itou@tokyo-uc.ac.jp&gt;<br>
-<br>
-これをアドレスリストとして活用する場合を考えてみましょう。<br>
-先ずこのアドレスをコピーしてExcelワークシートのA1セルに貼り付けてください。<br>
-このアドレスを区切り文字 "; " （セミコロン+スペース）で行に分割したいので、A3セルに以下の関数を入力してみてください。（注意:行方向に区切りたいので第2引数ではなく第3引数に区切り文字を入力します）<br>
-<br>
-A3セル: =TEXTSPLIT(A1,,"; ") <br>
-<br>
-するとA3セルからA7セルが以下のように表示されます。<br>
-<br>
-佐藤太郎&lt;t.satou@gmail.com&gt; <br>
-鈴木花子&lt;h.suzuki@abc.co.jp&gt; <br>
-高橋次郎&lt;j.takahashi@docomo.ne.jp&gt; <br>
-田中美子&lt;y.tanaka@yahoo.co.jp&gt; <br>
-伊藤三郎&lt;s.itou@tokyo-uc.ac.jp&gt; <br>
-<br>
-でもこのままではメールアドレスを利用できないので、区切り記号で分割し "<" より後ろ、かつ ">" より前の部分を取り出す必要があります。 <br>
-A9セルとB9セルに以下の関数を入力してみてください。 <br>
-<br>
-A9セル: =TEXTBEFORE(TEXTSPLIT(A1,,"; "),"<") <br>
-B9セル: =TEXTBEFORE(TEXTAFTER(TEXTSPLIT(A1,,"; "),"<"),">") <br>
-<br>
-すると以下のように表示されるはずです。 <br>
-<br>
-佐藤太郎&emsp;t.satou@gmail.com <br>
-鈴木花子&emsp;h.suzuki@abc.co.jp <br>
-高橋次郎&emsp;j.takahashi@docomo.ne.jp <br>
-田中美子&emsp;y.tanaka@yahoo.co.jp <br>
-伊藤三郎&emsp;s.itou@tokyo-uc.ac.jp <br>
-<br>
-これをコピーして値で張り付ければアドレスリストの完成です。<br>
-さらにメールアドレスの入力されたセルを選択して「F2」キー、「Enter」キー、「F2」キー、「Enter」キー …と繰り返し入力することでリンクを設定できます。<br>
-</p>
-<img src="https://res.cloudinary.com/hn1p0jbrv/image/upload/v1663005634/media/images/%E7%94%BB%E5%83%8F1_rtxr8m.png" alt="textsplit"><br>
-<br>
-<p>
-リンクを有効化させるとワンクリックでメール作成の画面が立ち上がるので便利ですよね！<br>
-
-
-</p>
-
-</div>
+    <div class="post_block">
+        <br>
+        <h2 style="text-align: center;">ちょっとしたExcel勉強会</h2>
+        <h6 style="text-align: center;">Simple Excel Study Session</h6>
+        <br>
+        <p>
+        理論を応用するために、さまざまなデータを収集し、分析し、活用する場面が多々あります。
+        そのための身近なツールとしてPCは欠かせません。中でも身近なアプリケーションがExcelではないでしょうか。
+        でも、手作業で操作していては生産性は上がらないし品質も向上しません。そこで重要なキーワードが自動化です。
+        大量の繰り返し処理、複雑な集計や演算などは機械に任せて自動化したいですよね？
+        ここでは他のアプリケーションとの連携なども含め、自分で出来るちょっとした自動化を目的に、
+        Excelの関数や便利な機能などのトピックスを紹介していきます。
+        </p>
+        <br>
+        <hr>
+    </div>
+    
+    {% for post in posts %}
+        <div class="post_block">
+            <h4 class="subtitle">{{post.title}}</h4>
+            <small>Posted at {{post.posted_date}}</small>
+            <p>{{post.intro}}</p>
+            <a href="{% url 'post_detail' post.slug %}">続きを読む</a>
+            <hr>
+        </div>
+    {% endfor %}
 {% endblock %}
