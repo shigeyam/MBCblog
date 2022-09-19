@@ -21,8 +21,8 @@ class PostQuerySet(models.QuerySet):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
     slug = models.SlugField()
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
     intro = models.TextField()
     body = models.TextField()
     posted_date = models.DateTimeField(auto_now_add=True)

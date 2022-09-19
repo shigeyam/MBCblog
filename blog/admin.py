@@ -4,7 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('body')
-    list_display = ('category', 'slug', 'title', 'posted_date')
+    list_display = ('slug', 'category', 'title', 'posted_date')
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'posted_date')
